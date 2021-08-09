@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <!-- Title -->
+    <title>Dashboard</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar Starts -->
+    <nav class="navbar">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">ADMIN DASHBOARD</span>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/biodata">Biodata</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/history">Game History</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Navbar Ends -->
+    <!-- Content Starts -->
+    <!-- Create Button -->
+    <button type="button" class="btn create-btn">
+      <a href="/users/create" class="create-btn-txt">Create</a>
+    </button>
+    <!-- Create Button Ends -->
+    <div class="content d-flex flex-row">
+      <% user.forEach(user => { %>
+      <!-- Card Starts -->
+      <div class="col d-flex flex-fill flex-wrap justify-content-evenly">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">ID: <%= user.id %></h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              Username: <%= user.username %>
+              <br />
+              Password: <%= user.password %>
+              <br />
+              <br />
+              Created At:
+              <br />
+              <%= user.createdAt %>
+              <br />
+              <br />
+              Updated At:
+              <br />
+              <%= user.updatedAt %>
+            </h6>
+            <a href="/users/update/<%= user.id %> " class="card-link">Update</a>
+            <a href="/users/delete/<%= user.id %> " class="card-link">Delete</a>
+          </div>
+        </div>
+        <!-- Card Ends -->
+        <% }) %>
+      </div>
+    </div>
+    <!-- Content Ends -->
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

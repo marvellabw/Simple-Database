@@ -1,0 +1,35 @@
+{
+  "name": "challenge-ch-6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "db:create": "npx sequelize-cli db:create",
+    "model-gen:user": "npx sequelize-cli model:generate --name Users --attributes username:string,password:string",
+    "model-gen:biodata": "npx sequelize-cli model:generate --name Biodata --attributes firstName:string,lastName:string,color:string",
+    "model-gen:history": "npx sequelize-cli model:generate --name History --attributes victory:integer,loss:integer",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate-down": "npx sequelize-cli db:migrate:undo",
+    "seed-gen:user": "npx sequelize-cli seed:generate --name users",
+    "seed-gen:biodata": "npx sequelize-cli seed:generate --name biodata",
+    "seed-gen:history": "npx sequelize-cli seed:generate --name history",
+    "seed": "npx sequelize-cli db:seed:all",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "sequelize-cli": "^6.2.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.6.5"
+  }
+}

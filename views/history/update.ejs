@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update History</title>
+  </head>
+  <body>
+    <div>
+      <h1>Update History</h1>
+    </div>
+	<% hist.forEach(hist => { %>
+		<form action="/history/update/<%= hist.id %> " method="POST">
+			<label for="victory">Victory:</label>
+			<input
+			  type="text"
+			  name="victory"
+			  value="<%=hist.victory%>"
+			/>
+			<label for="loss">Loss:</label>
+			<input
+			  type="text"
+			  name="loss"
+			  value="<%=hist.loss%>"
+			/>
+			<input type="submit" value="Edit History" />
+			<br>
+			<br>
+		</form>
+		<% }) %>
+    </div>
+  </body>
+</html>

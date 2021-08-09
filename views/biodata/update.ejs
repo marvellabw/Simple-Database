@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update Biodata</title>
+  </head>
+  <body>
+    <div>
+      <h1>Update Biodata</h1>
+    </div>
+	<% bio.forEach(bio => { %>
+		<form action="/biodata/update/<%= bio.id %> " method="POST">
+			<label for="firstName">First Name:</label>
+			<input
+			  type="text"
+			  name="firstName"
+			  value="<%=bio.firstName%>"
+			/>
+			<label for="lastName">Last Name:</label>
+			<input
+			  type="text"
+			  name="lastName"
+			  value="<%=bio.lastName%>"
+			/>
+			<label for="color">Color:</label>
+			<input
+			  type="text"
+			  name="color"
+			  value="<%=bio.color%>"
+			/>
+			<input type="submit" value="Edit Biodata" />
+			<br>
+			<br>
+		</form>
+		<% }) %>
+    </div>
+  </body>
+</html>

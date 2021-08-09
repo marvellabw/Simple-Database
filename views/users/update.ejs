@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Update User Data</title>
+  </head>
+  <body>
+    <div>
+      <h1>Update User Data</h1>
+    </div>
+	<% user.forEach(user => { %>
+		<form action="/users/update/<%= user.id %> " method="POST">
+			<label for="username">Username:</label>
+			<input
+			  type="text"
+			  name="username"
+			  value="<%=user.username%>"
+			/>
+			<label for="password">Password:</label>
+			<input
+			  type="text"
+			  name="password"
+			  value="<%=user.password%>"
+			/>
+			<input type="submit" value="Edit User" />
+			<br>
+			<br>
+		</form>
+		<% }) %>
+    </div>
+  </body>
+</html>

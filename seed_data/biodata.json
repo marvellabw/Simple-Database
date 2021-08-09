@@ -1,0 +1,22 @@
+[
+  {
+    "firstName": "Dave",
+    "lastName": "Thompson",
+    "color": "Purple"
+  },
+  {
+    "firstName": "John",
+    "lastName": "Simmit",
+    "color": "Green"
+  },
+  {
+    "firstName": "Nikky",
+    "lastName": "Smedley",
+    "color": "Yellow"
+  },
+  {
+    "firstName": "Pui Fan",
+    "lastName": "Lee",
+    "color": "Red"
+  }
+]
